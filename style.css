@@ -1,0 +1,1093 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* Light text for contrast */
+}
+
+/* --- Container for the Header/Hero Section --- */
+.header-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 20px;
+}
+
+/* --- Content on the Left --- */
+.text-content {
+    flex-basis: 60%; 
+}
+
+.text-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+/* --- Image on the Right --- */
+.image-container {
+    flex-basis: 35%; 
+    text-align: right; 
+}
+
+.profile-image {
+    /* *** MODIFIED SIZES HERE *** */
+    width: 350px; 
+    height: 350px; 
+    
+    object-fit: cover; 
+    object-position: 50% 5%;/* Crops the image to fill the space */
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #333; /* Darker border */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Subtle glow effect */
+}
+#header{
+    width: 100%;
+    height: 100vh;
+
+}
+
+
+/* --- NAVIGATION BAR STYLES (Ensures it's at the very top) --- */
+.navbar {
+    position: fixed; /* KEY: Makes the bar stick to the top of the browser window */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #333;
+    display: flex; /* KEY: Puts logo on left, links on right */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 1px;
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* --- UPDATED STYLES for the Logo Text and Border --- */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00bcd4; 
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-right: 20px;
+    
+    position: relative; 
+    z-index: 2;         
+    display: inline-block; 
+    padding: 5px; 
+    border-radius: 4px; 
+    
+    /* Transition for the text color change */
+    transition: color 0.3s ease; 
+}
+
+/* Optional: Change text color on hover */
+.logo:hover {
+    color: white; 
+}
+
+/* --- Pseudo-element for the 3D Flowing Line Around Logo (Pink, Yellow, Red) --- */
+.logo::before {
+    content: '';
+    position: absolute;
+    /* Keeps the line thin */
+    top: -2px;    
+    left: -2px;   
+    width: calc(100% + 4px);  
+    height: calc(100% + 4px); 
+    
+    /* KEY CHANGE: Using soft Pink, Yellow, and Red colors */
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 105, 180, 0.05) 0%,     /* Fully Transparent Pink */
+        rgba(255, 192, 203, 0.7) 35%,     /* Soft Pink Light */
+        rgba(255, 255, 100, 0.8) 65%,     /* Bright Yellow Light */
+        rgba(255, 100, 100, 0.5) 85%,     /* Soft Red Light */
+        rgba(255, 105, 180, 0.05) 100%    /* Fully Transparent Pink */
+    );
+    background-size: 300% 300%; 
+    
+    border-radius: 4px; 
+    z-index: -1; 
+    
+    /* Hover triggered logic remains */
+    opacity: 0; 
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Ensure the hover logic remains: */
+.logo:hover::before {
+    opacity: 1; 
+    animation: logoBorderFlow 4s linear infinite; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Updated Hover Effect for Navigation Links --- */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Added transition for smooth effect */
+}
+
+.nav-links a:hover {
+    color: #1a1a1a; /* Dark text against the bright background */
+    background-color: #f7b731; /* Use the bright yellow/orange accent color */
+    font-weight: bold; /* Make the text slightly bolder on hover */
+    
+    /* NEW: Add a subtle color-matched shadow for a "pop" effect */
+    box-shadow: 0 0 8px rgba(247, 183, 49, 0.8); 
+}
+
+/* --- Keep the Active Link Style (for scrolling) --- */
+.nav-links a.active {
+    color: #1a1a1a; 
+    background-color: #00bcd4; /* Using the second accent color (Blue/Cyan) for the active link */
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.8); 
+}
+
+
+.header-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    min-height: 80vh; 
+    
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 10px; 
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-links a:hover {
+    color: #1a1a1a;
+    background-color: #f7b731;
+}
+#home {
+    
+    padding-top: 100px; 
+}
+/* --- ABOUT SECTION STYLES --- */
+.about-section h2 { 
+    color: #f7b731; 
+    margin-bottom: 30px; 
+    text-align: center;
+    font-size: 4em; 
+    
+    text-transform: uppercase;/* Adjust margin for intro text */
+}
+
+.about-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px auto; /* Center and add space below intro text */
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.about-details-grid {
+    display: grid;
+    /* Create 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; /* Space between the columns */
+    margin-top: 40px;
+}
+
+.details-item {
+    background-color: #2a2a2a; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.details-item h3 {
+    color: #00bcd4; 
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333; 
+    padding-bottom: 10px;
+}
+
+
+.skill-category h4 {
+    color: #31f794; 
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.skill-category p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+.experience-item, .education-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #333; 
+}
+.experience-item:last-child, .education-item:last-child {
+    border-bottom: none; 
+}
+
+.experience-item h4, .education-item h4 {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+.experience-item p, .education-item p {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-top: 0;
+}
+.experience-item ul {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: disc;
+    color: #ddd;
+}
+.experience-item li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}.about-me-image-wrapper {
+    max-width: 300px; 
+    margin: 0 auto 40px auto;
+    border-radius: 50%; 
+    overflow: hidden; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+    border: 3px solid #00bcd4; 
+}
+
+.about-me-image {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    object-fit: cover; 
+    object-position: center top; 
+}
+
+.percentage-highlight {
+    color: #f7b731; 
+    font-weight: bold;
+    font-size: 1.1em; 
+}
+.experience-item h4 {
+    color: red; /* Use the accent blue/cyan color */
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    margin-top: 0; /* Ensures there's no unnecessary space above the title */
+}
+.details-item h3 {
+    color: #f7b731; /* Use the main accent color (yellow/orange) */
+    font-size: 2em; /* Make it significantly larger than content text */
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    text-transform: uppercase; /* Makes it professional */
+    letter-spacing: 1px;
+    
+    /* NEW STYLING: Adds a stylish underline effect */
+    border-bottom: 2px solid #00bcd4; /* Underline with the second accent color (blue/cyan) */
+    position: relative;
+    display: inline-block; /* Crucial for border-bottom styling */
+}
+
+/* Optional: Add a subtle shadow to the text */
+.details-item h3 {
+    text-shadow: 0 0 5px rgba(247, 183, 49, 0.5); 
+}
+/* --- NEW STYLE for College Name Highlight --- */
+.college-name-highlight {
+    color: #00bcd4; /* Use the accent blue/cyan color */
+    font-weight: bold;
+    font-style: normal; /* Override the default italic style from the <p> tag */
+}
+
+
+
+
+/* --- UPDATED STYLES for Skills/Experience/Education Boxes (.details-item) --- */
+.details-item {
+    background-color: #2a2a2a; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    
+    position: relative; /* Needed for pseudo-element that will be the animated border */
+    overflow: hidden;   /* Ensures the animation stays within the border */
+    z-index: 1;         /* Ensures content is above the border animation */
+    
+    /* Initially a subtle transparent border that will be animated */
+    border: 2px solid transparent; 
+    
+    /* Smooth transition for the transform effect (lift) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Pseudo-element for the animated thin line border */
+/* --- UPDATED Pseudo-element for the Light, Thin Animated Border Line --- */
+.details-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px; 
+    
+    /* KEY CHANGE: Use rgba for transparency and softer colors */
+    background: linear-gradient(45deg, 
+        rgba(86, 231, 50, 0.5), /* Soft Blue/Cyan */
+        rgba(247, 183, 49, 0.5), /* Soft Yellow/Orange */
+        rgba(0, 188, 212, 0.5)
+    );
+    
+    background-size: 200% 200%; /* Reduced size for a faster, less chunky flow */
+    
+    z-index: -1; 
+    opacity: 0;
+    
+    /* MASK: Controls the line thickness */
+    /* Adjust the '4px' below to '2px' or '3px' for an even thinner line if needed */
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
+    -webkit-mask-composite: exclude;
+
+    transition: opacity 0.3s ease, background-position 0.3s ease;
+}
+
+/* Ensure the opacity is set to 1 on hover */
+.details-item:hover::before {
+    opacity: 1; 
+    animation: borderFlow 3s linear infinite; /* Keeps the flowing animation */
+}
+
+
+.hero-name-wrapper {
+    position: relative; 
+    display: inline-block; 
+    padding: 10px 15px; /* Space for the light border around the text */
+    border-radius: 8px; /* Slightly rounded corners for the effect */
+    overflow: hidden;   /* Essential to clip the rotating gradient */
+    z-index: 1;         /* Ensures content is above the glow */
+}
+
+.hero-name-wrapper::before {
+    content: '';
+    position: absolute;
+    /* Defines the THINNESS of the border line (adjust as needed) */
+    top: -3px;    
+    left: -3px;   
+    width: calc(100% + 6px);  /* 3px expansion on each side */
+    height: calc(100% + 6px); /* 3px expansion on each side */
+    
+    /* LIGHT, MIXED COLOURS (Pink, Yellow, Red) - continuous flow */
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 105, 180, 0.05) 0%,     /* Fully Transparent Pink */
+        rgba(255, 192, 203, 0.7) 35%,     /* Soft Pink Light */
+        rgba(255, 255, 100, 0.8) 65%,     /* Bright Yellow Light */
+        rgba(255, 100, 100, 0.5) 85%,     /* Soft Red Light */
+        rgba(255, 105, 180, 0.05) 100%    /* Fully Transparent Pink */
+    );
+    background-size: 300% 300%; /* Large enough for a smooth flow */
+    
+    border-radius: 10px; /* Match wrapper radius, slightly larger for effect */
+    z-index: -1;         /* Behind the text */
+    opacity: 1;          /* Always visible */
+    
+    /* Apply the continuous animation */
+    animation: heroBorderFlow 5s linear infinite; 
+}
+
+/* --- Ensure the h1 text itself remains styled --- */
+.text-content h1 { 
+    font-size: 4.5em; 
+    margin-bottom: 0.1em; 
+    color: white; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Subtle text glow */
+    position: relative; /* Ensures text is above pseudo-element */
+    z-index: 2;         /* Explicitly set above the pseudo-element */
+}
+
+/* --- New Keyframe Animation for Hero Border --- */
+@keyframes heroBorderFlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}/* --- UPDATED KEYFRAMES for Aggressive Flashing/Smash Effect --- */
+@keyframes logoBorderFlow {
+    /* KEY: Use step-like, non-smooth changes for a "smash" effect */
+    
+    0% {
+        transform: rotate(0deg) scale(1.05);
+        /* Start with the Pink/Yellow color visible */
+        background-position: 0% 50%;
+    }
+    
+    25% {
+        /* Sudden jump to a different position/rotation */
+        transform: rotate(15deg) scale(1.05);
+        background-position: 100% 50%; /* Flash position 1 (e.g., Red side) */
+    }
+
+    50% {
+        /* Another sudden jump */
+        transform: rotate(-15deg) scale(1.05);
+        background-position: 50% 100%; /* Flash position 2 (e.g., Pink side) */
+    }
+
+    75% {
+        /* Jump back, creating the aggressive 'Dug Dug' flicker */
+        transform: rotate(10deg) scale(1.05);
+        background-position: 100% 0%; /* Flash position 3 (e.g., Yellow side) */
+    }
+
+    100% {
+        
+        transform: rotate(0deg) scale(1.05);
+        background-position: 0% 50%;
+    }
+}
+.logo:hover::before {
+    opacity: 1; 
+  
+    animation: logoBorderFlow 1.5s linear infinite; 
+}
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* Light text for contrast */
+}
+
+/* Helper Class for consistent padding on all new sections */
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* CONTENT WRAPPER - Centers all main sections */
+.main-content-wrapper, .header-section {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* HORIZONTAL RULE (Separator) */
+hr {
+    border: 0;
+    border-top: 1px solid #333; /* Light gray separator line */
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* General Heading Styling (Applies to About, Services, Portfolio, Contact) */
+h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: #f7b731; /* Accent color for main headings */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 8%;
+  background-color: #0a0a0a; /* or your current dark color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo Styles with 3D Flow Animation Setup */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00bcd4;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-right: 20px;
+    
+    position: relative; 
+    z-index: 2;         
+    display: inline-block; 
+    padding: 5px; 
+    border-radius: 4px; 
+    transition: color 0.3s ease; 
+    cursor: default; /* Change cursor for visual feedback */
+}
+
+/* Logo Hover Text Color */
+.logo:hover {
+    color: white; 
+}
+
+/* Pseudo-element for the 3D Flowing Line Around Logo (HOVER TRIGGERED) */
+.logo::before {
+    content: '';
+    position: absolute;
+    /* Defines the THINNESS of the border line */
+    top: -2px;    
+    left: -2px;   
+    width: calc(100% + 4px);  
+    height: calc(100% + 4px); 
+    
+    /* LIGHT, MIXED COLOURS (Pink, Yellow, Red) */
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 105, 180, 0.05) 0%,    
+        rgba(255, 192, 203, 0.7) 35%,    
+        rgba(255, 255, 100, 0.8) 65%,    
+        rgba(255, 100, 100, 0.5) 85%,    
+        rgba(255, 105, 180, 0.05) 100%   
+    );
+    background-size: 300% 300%; 
+    
+    border-radius: 4px; 
+    z-index: -1; 
+    
+    opacity: 0; 
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Hover Effect: Activates the light and animation on mouse over */
+.logo:hover::before {
+    opacity: 1; 
+    /* Animation speed for the 'Dug Dug' effect */
+    animation: logoBorderFlow 1.5s linear infinite; 
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 20px; /* Spacing between links */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect: Colorful Pop */
+.nav-links a:hover {
+    color: #1a1a1a; 
+    background-color: #f7b731; /* Bright yellow/orange */
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(247, 183, 49, 0.8); 
+}
+
+/* Active Link Style (Scrollspy Highlight) */
+.nav-links a.active {
+    color: #1a1a1a; 
+    background-color: #00bcd4; /* Bright blue/cyan */
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.8); 
+}
+
+/* --- 1. HOME/HERO SECTION STYLES --- */
+#home {
+    padding-top: 100px; 
+}
+
+.header-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    min-height: 80vh; 
+}
+
+.text-content {
+    flex-basis: 60%; 
+}
+
+/* Hero Name Wrapper for 3D Flow */
+.hero-name-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.hero-name-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -3px;    
+    left: -3px;   
+    width: calc(100% + 6px);
+    height: calc(100% + 6px); 
+    
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 105, 180, 0.05) 0%,     
+        rgba(255, 192, 203, 0.7) 35%,     
+        rgba(255, 255, 100, 0.8) 65%,     
+        rgba(255, 100, 100, 0.5) 85%,     
+        rgba(255, 105, 180, 0.05) 100%    
+    );
+    background-size: 300% 300%; 
+    border-radius: 10px; 
+    z-index: -1;         
+    opacity: 1;          /* Always visible */
+    animation: heroBorderFlow 5s linear infinite; 
+}
+
+/* Hero Heading Text */
+.text-content h1 { 
+    font-size: 4.5em; 
+    margin-bottom: 0.1em; 
+    color: white; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Subtle text glow */
+    position: relative; 
+    z-index: 2;         
+}
+.text-content p {
+    font-size: 1.4em;
+    color: #00bcd4;
+}
+
+/* Profile Image */
+.image-container {
+    flex-basis: 35%; 
+    text-align: right; 
+}
+
+.profile-image {
+    width: 350px; 
+    height: 350px; 
+    object-fit: cover; 
+    object-position: 50% 45%; 
+    border-radius: 50%; 
+    border: 5px solid #333; 
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* --- 2. ABOUT SECTION STYLES --- */
+.about-section h2 { 
+    color: #f7b731; 
+    margin-bottom: 30px; 
+    text-align: center; 
+    font-size: 4em; /* Bigger heading */
+}
+
+.about-me-image-wrapper {
+    max-width: 300px; 
+    margin: 0 auto 40px auto; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+    border: 3px solid #00bcd4; 
+}
+
+.about-me-image {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    object-fit: cover; 
+    object-position: center top; 
+}
+
+.about-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.about-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Styles for Skills/Experience/Education Boxes */
+.details-item {
+    background-color: #2a2a2a; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    
+    position: relative; 
+    overflow: hidden;   
+    z-index: 1;         
+    
+    border: 2px solid transparent; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effect for Lift and Flowing Line */
+.details-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.details-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    
+    /* Flowing Colors */
+    background: linear-gradient(45deg, rgba(0, 188, 212, 0.9), rgba(247, 183, 49, 0.9), rgba(0, 188, 212, 0.9)); 
+    background-size: 400% 400%;
+    
+    z-index: -1; 
+    opacity: 0;   
+    
+    /* Creates the thin border effect */
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
+    -webkit-mask-composite: exclude;
+
+    transition: opacity 0.3s ease, background-position 0.3s ease;
+}
+
+.details-item:hover::before {
+    opacity: 1; 
+    animation: borderFlow 3s linear infinite; 
+}
+
+/* Skills/Experience/Education Sub-Headings */
+.details-item h3 {
+    color: #f7b731; 
+    font-size: 2em; 
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    
+    border-bottom: 2px solid #00bcd4; 
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 5px rgba(247, 183, 49, 0.5); 
+}
+
+/* Experience Project Titles */
+.experience-item h4 {
+    color: #00bcd4; /* Colorful project titles */
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Education Details */
+.college-name-highlight {
+    color: #00bcd4; 
+    font-weight: bold;
+    font-style: normal; 
+}
+
+.percentage-highlight {
+    color: #f7b731; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* --- 3. SERVICES SECTION STYLES --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.service-item {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 4px solid #00bcd4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 10px #f7b731;
+    background-color: #333;
+}
+.service-item .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+.service-item h3 {
+    color: #00bcd4;
+    margin-top: 0;
+}
+
+/* --- 4. PORTFOLIO SECTION STYLES --- */
+.portfolio-work h2 {
+    /* Inherits from general h2 */
+}
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px;
+}
+.work-item {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.work-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 10px #f7b731; 
+}
+.work-item  {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #333; 
+    min-height: 200px;
+}
+.work-item h4 {
+    color: #f7b731;
+    padding: 15px;
+    margin: 0;
+}
+.work-item p {
+    padding: 0 15px 15px;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- 5. CONTACT SECTION STYLES --- */
+.contact-section {
+    text-align: center;
+}
+.contact-intro {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1em;
+}
+.contact-form button {
+    background-color: #00bcd4;
+    color: #1a1a1a;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-form button:hover {
+    background-color: #0097a7;
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+/* Animation for the Flowing Line on Detail Boxes (Skills, Exp, Edu) */
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animation for the Logo (Aggressive "Smash" Effect) */
+@keyframes logoBorderFlow {
+    0% {
+        transform: rotate(0deg) scale(1.05);
+        background-position: 0% 50%;
+    }
+    
+    25% {
+        transform: rotate(15deg) scale(1.05);
+        background-position: 100% 50%; 
+    }
+
+    50% {
+        transform: rotate(-15deg) scale(1.05);
+        background-position: 50% 100%; 
+    }
+
+    75% {
+        transform: rotate(10deg) scale(1.05);
+        background-position: 100% 0%; 
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1.05);
+        background-position: 0% 50%;
+    }
+}
+
+/* --- NEW: "Hire Me" Button Styles with 3D Light Animation --- */
+.btn-hire-me {
+    display: inline-block; /* Essential for padding/margin/width */
+    padding: 15px 30px;
+    margin-top: 30px;
+    background-color: transparent; /* Start with transparent background */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 2px solid #00bcd4; /* Subtle initial border */
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden; /* Crucial for clipping the glowing border */
+    position: relative; /* Context for pseudo-element */
+    z-index: 1; /* Ensures text is above glow */
+    
+    transition: color 0.3s ease, border-color 0.3s ease; /* Smooth text/border transition */
+}
+
+/* Pseudo-element for the 3D flowing light border */
+.btn-hire-me::before {
+    content: '';
+    position: absolute;
+    /* Control the thickness of the light border */
+    top: -5px;   
+    left: -5px;  
+    width: calc(100% + 10px); 
+    height: calc(100% + 10px); 
+    
+    /* Using your mixed light colors (Pink, Yellow, Red) */
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 105, 180, 0.05) 0%,     /* Transparent Pink */
+        rgba(255, 192, 203, 0.7) 35%,     /* Soft Pink Light */
+        rgba(255, 255, 100, 0.8) 65%,     /* Bright Yellow Light */
+        rgba(255, 100, 100, 0.5) 85%,     /* Soft Red Light */
+        rgba(255, 105, 180, 0.05) 100%    /* Transparent Pink */
+    );
+    background-size: 300% 300%; /* Large size for dynamic animation */
+    
+    border-radius: 10px; /* Match button, slightly larger for effect */
+    z-index: -1; 
+    opacity: 0; /* Initially hidden */
+    
+    transition: opacity 0.4s ease-in-out; /* Smooth fade-in */
+}
+
+/* Hover Effect: Reveals light and animation, lifts the button */
+.btn-hire-me:hover {
+    color: #1a1a1a; /* Darken text for contrast */
+    background-color: #00bcd4; /* Change button background on hover */
+    border-color: transparent; /* Hide original border */
+    
+    /* Subtle 3D lift on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 188, 212, 0.8);
+}
+
+.btn-hire-me:hover::before {
+    opacity: 1; /* Make the light visible */
+    
+    /* Use a new animation keyframe for a vibrant, aggressive flow */
+    animation: btnGlowFlow 2s linear infinite; 
+}
+
+/* --- NEW KEYFRAME ANIMATION for the Hire Me Button --- */
+@keyframes btnGlowFlow {
+    0% {
+        transform: rotate(0deg) scale(1.02);
+        background-position: 0% 50%;
+    }
+    33% {
+        transform: rotate(10deg) scale(1.03);
+        background-position: 100% 50%; 
+    }
+    66% {
+        transform: rotate(-10deg) scale(1.04);
+        background-position: 50% 100%; 
+    }
+    100% {
+        transform: rotate(0deg) scale(1.02);
+        background-position: 0% 50%;
+    }
+}
+.tech-highlight {
+    color: #f7b731; /* Use the Yellow/Orange accent color for high visibility */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(247, 183, 49, 0.5); /* Subtle glow effect */
+    transition: color 0.3s ease;
+}
+
+/* Ensure the strong tag inside services text also adopts this color */
+.service-item p strong {
+    color: #00bcd4; /* Use Blue/Cyan for tech names in the service description body */
+    text-shadow: 0 0 3px rgba(0, 188, 212, 0.5);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid; /* <-- THIS IS THE KEY RULE */
+    gap: 20px;
+    /* ... rest of the styling ... */
+}
+
+/* Also ensure your inputs fill the space */
+.contact-form input,
+.contact-form textarea {
+    /* ... other styles ... */
+    width: 100%; 
+    box-sizing: border-box; 
+}
