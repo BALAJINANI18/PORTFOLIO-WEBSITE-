@@ -25,23 +25,7 @@ My areas of interest include:
 - GitHub
 - Netlify
 
-  ## 📸 Website Preview
-
-### Home Page
-![Home Page](<img width="1901" height="1097" alt="image" src="https://github.com/user-attachments/assets/edba127a-b17c-4381-b374-e5ab7f696b4f" />
-)
-
-### Service Section
-![About Section](images/about.png)
-
-### Portfolio Section
-![Projects Section](<img width="1902" height="1090" alt="image" src="https://github.com/user-attachments/assets/a39ff864-5315-436c-9cfe-4699e1acaf2c" />
-)
-
-### Contact Section
-![Contact Section](<img width="1901" height="1086" alt="image" src="https://github.com/user-attachments/assets/3be242ce-d454-4fe8-abe3-aa244a968040" />
-)
-
+  
 ## ✨ Features
 
 - Responsive Design
